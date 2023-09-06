@@ -17,8 +17,11 @@ def add_task(task):
 
 #Define function to remove a task from the list
 def delete_task(task):
-    tasks.remove(task)
-    typingPrint(f"Task '{task}' removed successfully.")
+    if task in tasks:
+        tasks.remove(task)
+        typingPrint(f"Task '{task}' removed successfully.")
+    else:
+        typingPrint(f"Task '{task}' not found in the list.")
 
 #Define function to view tasks in list
 def view_tasks():
@@ -32,10 +35,10 @@ def view_tasks():
 #Main programme loop
 while True:
     print("\nOptions:")
-    typingPrint("1. Add Task")
-    typingPrint("2. Delete Task")
-    typingPrint("3. View Tasks")
-    typingPrint("4. Quit")
+    typingPrint("1. Add Task\n")
+    typingPrint("2. Delete Task\n")
+    typingPrint("3. View Tasks\n")
+    typingPrint("4. Quit\n")
 #Create choice variable input
     choice = input("Enter your choice >")
 
